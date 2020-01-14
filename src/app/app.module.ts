@@ -2,6 +2,7 @@ import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { HttpClientModule } from "@angular/common/http";
 import {
   MatInputModule,
   MatCardModule,
@@ -14,6 +15,7 @@ import { AppComponent } from "./app.component";
 import { PostCreateComponent } from "./posts/posts-create/posts-create.component";
 import { HeaderComponent } from "./header/header/header.component";
 import { PostListComponent } from "./posts/post-list/post-list/post-list.component";
+import { PostsService } from "./posts/posts.service";
 
 @NgModule({
   declarations: [
@@ -30,9 +32,10 @@ import { PostListComponent } from "./posts/post-list/post-list/post-list.compone
     MatCardModule,
     MatButtonModule,
     MatToolbarModule,
-    MatExpansionModule
+    MatExpansionModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [PostsService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
